@@ -81,7 +81,6 @@ void telaEquipe(void) {
     printf("///               Departamento de Computação e Tecnologia                   ///\n");
     printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
     printf("///                  Projeto Sistema de Gestão Escolar                      ///\n");
-    printf("///                Developed by  @flgorgonio - Jun, 2021                    ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
