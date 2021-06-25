@@ -11,11 +11,15 @@
 /////
 // Assinatura das funções
 void telaSobre(void);
-
+void telaPrincipal(void);
+void telaEquipe(void);
 /////
 // Programa principal
 int main(void) {
     telaSobre();
+    telaPrincipal();
+    telaEquipe();
+
     return 0;
 }
 
@@ -58,7 +62,7 @@ void telaPrincipal(void) {
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
-    printf("///            = = = = = Sistema de Gestão Escolar = = = = =                ///\n");
+    printf("///            = = = = = Sistema de Biblioteca de Livros = = = = =          ///\n");
     printf("///                                                                         ///\n");
     printf("///            1. Módulo Livro                                              ///\n");
     printf("///            2. Módulo Cliente                                            ///\n");
@@ -84,7 +88,7 @@ void telaEquipe(void) {
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
-    printf("///            = = = = = Sistema de Gestão Escolar = = = = =                ///\n");
+    printf("///            = = = = = Sistema de Biblioteca de Livros = = = = =          ///\n");
     printf("///                                                                         ///\n");
     printf("///            Este projeto está sendo desenvolvido por:                    ///\n");
     printf("///                                                                         ///\n");
