@@ -13,12 +13,24 @@
 void telaSobre(void);
 void telaPrincipal(void);
 void telaEquipe(void);
+void telaModuloLivro(void);
+void telaModuloCliente(void);
+void telaModuloEmprestimo(void);
+void telaModuloRelatorio(void);
+
+
 /////
 // Programa principal
 int main(void) {
     telaSobre();
     telaPrincipal();
     telaEquipe();
+    telaModuloLivro();
+    telaModuloCliente();
+    telaModuloEmprestimo();
+    telaModuloEmprestimo();
+    telaModuloRelatorio();
+
 
     return 0;
 }
@@ -99,3 +111,116 @@ void telaEquipe(void) {
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
 }
+
+
+
+void telaModuloLivro(void) {
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///               Departamento de Computação e Tecnologia                   ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///                  Projeto Biblioteca de Livros                           ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///            = = = = = Sistema de Biblioteca de Livros = = = = =          ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                       1. Módulo Livro                                   ///\n");
+    printf("///                      1.1 Cadastrar um Livro                             ///\n");
+    printf("///                      1.2 Pesquisar um Livro                             ///\n");
+    printf("///                      1.3 Alterar um Livro                               ///\n");
+    printf("///                      1.4 Excluir um Livro                               ///\n");
+    printf("///                      1.5 Sair                                           ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+}
+
+
+
+void telaModuloCliente(void) {
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///               Departamento de Computação e Tecnologia                   ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///                  Projeto Biblioteca de Livros                           ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///            = = = = = Sistema de Biblioteca de Livros = = = = =          ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                       2. Módulo Cliente                                 ///\n");
+    printf("///                      2.1 Cadastrar Cliente                              ///\n");
+    printf("///                      2.2 Pesquisar Cliente                              ///\n");
+    printf("///                      2.3 Editar    Cliente                              ///\n");
+    printf("///                      2.4 Excluir   Cliente                              ///\n");
+    printf("///                      2.5 Sair                                           ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+}
+
+
+
+void telaModuloEmprestimo(void) {
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///               Departamento de Computação e Tecnologia                   ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///                  Projeto Biblioteca de Livros                           ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///            = = = = = Sistema de Biblioteca de Livros = = = = =          ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                       3. Módulo Empréstimo                              ///\n");
+    printf("///                      3.1 Cadastrar Empréstimo                           ///\n");
+    printf("///                      3.2 Pesquisar Empréstimo                           ///\n");
+    printf("///                      3.3 Editar Empréstimo                              ///\n");
+    printf("///                      3.4 Devolver Empréstimo                            ///\n");
+    printf("///                      3.5 Sair                                           ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+}
+
+
+
+void telaModuloRelatorio(void) {
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///               Departamento de Computação e Tecnologia                   ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///                  Projeto Biblioteca de Livros                           ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///            = = = = = Sistema de Biblioteca de Livros = = = = =          ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                       4. Módulo Relatório                               ///\n");
+    printf("///                      4.1 Relatório de Livros Cadastrado                 ///\n");
+    printf("///                      4.2 Relatório de Livros Emprestados                ///\n");
+    printf("///                      4.3 Relatório de Clientes Ativos                   ///\n");
+    printf("///                      4.4 Relatório de Empréstimo                        ///\n");
+    printf("///                      4.5 Relatório dos Empréstimos em Atraso            ///\n");
+    printf("///                     4.6 Sair                                            ///\n");
+    printf("///                                                                          ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+}
+
+
+
+
