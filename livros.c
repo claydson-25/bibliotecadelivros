@@ -215,8 +215,8 @@ void telaModuloRelatorio(void) {
     printf("///                      4.3 Relatório de Clientes Ativos                   ///\n");
     printf("///                      4.4 Relatório de Empréstimo                        ///\n");
     printf("///                      4.5 Relatório dos Empréstimos em Atraso            ///\n");
-    printf("///                     4.6 Sair                                            ///\n");
-    printf("///                                                                          ///\n");
+    printf("///                      4.6 Sair                                           ///\n");
+    printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
 }
