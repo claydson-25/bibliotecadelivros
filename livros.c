@@ -11,7 +11,7 @@
 /////
 // Assinatura das funções
 void telaSobre(void);
-void telaPrincipal(void);
+void telaPrincipal(void); 
 void telaEquipe(void);
 void telaModuloLivro(void);
 void telaModuloCliente(void);
@@ -254,7 +254,7 @@ void ModuloLivro(void)
     scanf ("%d", &excluir);
     printf("Sair\n");
     scanf ("%d", &sair);
-    return 0;
+    
 }
 
 
@@ -275,7 +275,7 @@ void ModuloCliente(void)
     scanf ("%d", &excluir);
     printf("Sair\n");
     scanf ("%d", &sair);
-    return 0;
+    
 }
 
 
@@ -296,7 +296,7 @@ void ModuloEmprestimo(void)
     scanf ("%d", &devolver);
     printf("Sair\n");
     scanf ("%d", &sair);
-    return 0;
+    
     
 }
 
@@ -306,7 +306,7 @@ void ModuloRelatorio(void)
     int cadastrado;
     int emprestado;
     int ativo;
-    int emprestimo;
+    //int emprestimo;
     int atraso;
     int sair;
     printf("Relatorio de Livro Cadastrado:\n");
@@ -317,9 +317,9 @@ void ModuloRelatorio(void)
     scanf ("%d", &ativo);
     printf("Relatorio de Emprestimo em Atraso:\n");
     scanf ("%d", &atraso);
-    print("Sair");
+    printf("Sair");
     scanf ("%d", &sair);
-    Return 0;
+    
 }
 
 
