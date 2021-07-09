@@ -17,11 +17,15 @@ void telaModuloLivro(void);
 void telaModuloCliente(void);
 void telaModuloEmprestimo(void);
 void telaModuloRelatorio(void);
-
+void ModuloLivro(void);
+void ModuloCliente(void);
+void ModuloEmprestimo(void);
+void ModuloRelatorio(void);
 
 /////
 // Programa principal
-int main(void) {
+int main(void) 
+{
     telaSobre();
     telaPrincipal();
     telaEquipe();
@@ -30,7 +34,10 @@ int main(void) {
     telaModuloEmprestimo();
     telaModuloEmprestimo();
     telaModuloRelatorio();
-
+    ModuloLivro();
+    ModuloCliente();
+    ModuloEmprestimo();
+    ModuloRelatorio();
 
     return 0;
 }
@@ -38,7 +45,8 @@ int main(void) {
 /////
 // Funções
 
-void telaSobre(void) {
+void telaSobre(void) 
+{
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -62,7 +70,8 @@ void telaSobre(void) {
     printf("\n");
 }
 
-void telaPrincipal(void) {
+void telaPrincipal(void) 
+{
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -88,7 +97,8 @@ void telaPrincipal(void) {
 
 
 
-void telaEquipe(void) {
+void telaEquipe(void) 
+{
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -114,7 +124,8 @@ void telaEquipe(void) {
 
 
 
-void telaModuloLivro(void) {
+void telaModuloLivro(void)
+ {
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -141,7 +152,8 @@ void telaModuloLivro(void) {
 
 
 
-void telaModuloCliente(void) {
+void telaModuloCliente(void) 
+{
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -164,11 +176,13 @@ void telaModuloCliente(void) {
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
+
 }
 
 
 
-void telaModuloEmprestimo(void) {
+void telaModuloEmprestimo(void) 
+{
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -195,7 +209,8 @@ void telaModuloEmprestimo(void) {
 
 
 
-void telaModuloRelatorio(void) {
+void telaModuloRelatorio(void) 
+{
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -219,6 +234,92 @@ void telaModuloRelatorio(void) {
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
+}
+
+
+void ModuloLivro(void)
+{   
+    int cadastrar;
+    int pesquisar;
+    int alterar;
+    int excluir;
+    int sair;
+    printf("Cadastrar Livro:\n");
+    scanf ("%d", &cadastrar);
+    printf("Pesquisar Livro:\n");
+    scanf ("%d", &pesquisar);
+    printf("Alterar Livro:\n");
+    scanf ("%d", &alterar);
+    printf("Excluir Livro:\n");
+    scanf ("%d", &excluir);
+    printf("Sair\n");
+    scanf ("%d", &sair);
+    return 0;
+}
+
+
+void ModuloCliente(void)
+{
+    int cadastrar;
+    int pesquisar;
+    int editar;
+    int excluir;
+    int sair;
+    printf("Cadastrar Cliente:\n");
+    scanf ("%d", &cadastrar);
+    printf("Pesquisar Cliente:\n");
+    scanf ("%d", &pesquisar);
+    printf("Editar Cliente:\n");
+    scanf ("%d", &editar);
+    printf("Excluir Cliente:\n");
+    scanf ("%d", &excluir);
+    printf("Sair\n");
+    scanf ("%d", &sair);
+    return 0;
+}
+
+
+void ModuloEmprestimo(void)
+{
+    int cadastrar;
+    int pesquisar;
+    int editar;
+    int devolver;
+    int sair;
+    printf("Cadastrar Empréstimo:\n");
+    scanf ("%d", &cadastrar);
+    printf("Pesquisar Livro:\n");
+    scanf ("%d", &pesquisar);
+    printf("Editar Livro:\n");
+    scanf ("%d", &editar);
+    printf("Devolver Livro:\n");
+    scanf ("%d", &devolver);
+    printf("Sair\n");
+    scanf ("%d", &sair);
+    return 0;
+    
+}
+
+
+void ModuloRelatorio(void)
+{
+    int cadastrado;
+    int emprestado;
+    int ativo;
+    int emprestimo;
+    int atraso;
+    int sair;
+    printf("Relatorio de Livro Cadastrado:\n");
+    scanf ("%d", &cadastrado);
+    printf("Relatorio de Livro Emprestado:\n");
+    scanf ("%d", &emprestado);
+    printf("Relatorio de Cliente Ativo:\n");
+    scanf ("%d", &ativo);
+    printf("Relatorio de Emprestimo em Atraso:\n");
+    scanf ("%d", &atraso);
+    print("Sair");
+    scanf ("%d", &sair);
+    Return 0;
 }
 
 
