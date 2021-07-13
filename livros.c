@@ -32,7 +32,6 @@ int main(void)
     telaModuloLivro();
     telaModuloCliente();
     telaModuloEmprestimo();
-    telaModuloEmprestimo();
     telaModuloRelatorio();
     ModuloLivro();
     ModuloCliente();
@@ -106,7 +105,6 @@ void telaEquipe(void)
     printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
     printf("///               Departamento de Computação e Tecnologia                   ///\n");
     printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
-    printf("///                  Projeto Sistema de Gestão Escolar                      ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
