@@ -11,7 +11,7 @@
 /////
 // Assinatura das funções
 void telaSobre(void);
-void telaPrincipal(void); 
+char telaPrincipal(void); 
 void telaEquipe(void);
 void telaModuloLivro(void);
 void telaModuloCliente(void);
@@ -26,26 +26,113 @@ void ModuloRelatorio(void);
 // Programa principal
 int main(void) 
 {
-    telaSobre();
-    telaPrincipal();
-    telaEquipe();
-    telaModuloLivro();
-    telaModuloCliente();
-    telaModuloEmprestimo();
-    telaModuloRelatorio();
-    ModuloLivro();
-    ModuloCliente();
-    ModuloEmprestimo();
-    ModuloRelatorio();
+    char opcao;
+	do {
+		opcao = telaPrincipal();
+		switch(opcao) {
+			case '1': 	ModuloLivro();
+						break;
+			case '2': 	ModuloCliente();
+						break;
+			case '3': 	ModuloEmprestimo();
+						break;
+			case '4': 	ModuloRelatorio();
+						break;
+			
+		} 		
+	} while (opcao != '0');
 
     return 0;
 }
 
+void ModuloLivro(void) {
+	char opçao;
+	do {
+		ModuloLivro();
+		switch(opçao) {
+			case 'a': 	CadastrarLivro();
+						       break;
+			case 'b': 	PesquisarLivro();
+						       break;
+			case 'c': 	  AlterarLivro();
+						        break;
+			case 'd': 	 ExcluirLivro();
+						        break;
+            
+			
+		} 		
+	} while (opçao != '0');
+	return 0;    
+}
+
+
+void ModuloCliente(void) {
+	char opçao;
+	do {
+		ModuloCliente();
+		switch(opçao) {
+			case '1': 	CadastrarCLiente();
+						       break;
+			case '2': 	PesquisarCliente();
+						       break;
+			case '3': 	   EditarCliente();
+						        break;
+			case '4': 	 ExcluirCliente();
+						        break;
+            
+			
+		} 		
+	} while (opçao != '0');
+	return 0;    
+}
+
+void ModuloEmprestimo(void) {
+	char opçao;
+	do {
+		ModuloEmprestimo();
+		switch(opçao) {
+			case '1': 	CadastrarEmprestimo();
+						       break;
+			case '2': 	PesquisarEmprestimo();
+						       break;
+			case '3': 	   EditarLivro();
+						        break;
+			case '4': 	 DevolverLivro();
+						        break;
+            
+			
+		} 		
+	} while (opçao != '0');
+	return 0;  
+
+void ModuloRelatorio(void); 
+{
+	char opçao;
+	do {
+		ModuloEmprestimo();
+		switch(opçao) {
+			case '1': 	LivroCadastrado();
+						       break;
+			case '2': 	LivroEmprestado();
+						       break;
+			case '3': 	ClienteAtivo();
+						        break;
+			case '4': 	 Emprestimo();
+						        break;
+            case '5':    EmprestimoEmAtraso();
+                                break;
+			
+		} 		
+	} while (opçao != '0');
+	return 0;  
+
+
 /////
 // Funções
 
-void telaSobre(void) 
+void telaSobre(void);
 {
+
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -69,8 +156,9 @@ void telaSobre(void)
     printf("\n");
 }
 
-void telaPrincipal(void) 
+char telaPrincipal(void);
 {
+    char op;
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -89,14 +177,18 @@ void telaPrincipal(void)
     printf("///            3. Módulo Empréstimo                                         ///\n");
     printf("///            4. Módulo Relatório                                          ///\n");
     printf("///            0. Sair                                                      ///\n");
+    printf("///           Escolha a opção desejada: ");                                   
+	scanf("%c", &op);
+	getchar();
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
+    return op;
 }
 
 
 
-void telaEquipe(void) 
+void telaEquipe(void); 
 {
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -122,7 +214,7 @@ void telaEquipe(void)
 
 
 
-void telaModuloLivro(void)
+ void telaModuloLivro(void);
  {
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -138,19 +230,22 @@ void telaModuloLivro(void)
     printf("///            = = = = = Sistema de Biblioteca de Livros = = = = =          ///\n");
     printf("///                                                                         ///\n");
     printf("///                       1. Módulo Livro                                   ///\n");
-    printf("///                       a. Cadastrar um Livro                             ///\n");
-    printf("///                       b. Pesquisar um Livro                             ///\n");
-    printf("///                       c. Alterar um Livro                               ///\n");
-    printf("///                       d. Excluir um Livro                               ///\n");
+    printf("///                       a. Cadastrar  Livro                               ///\n");
+    printf("///                       b. Pesquisar  Livro                               ///\n");
+    printf("///                       c. Alterar    Livro                               ///\n");
+    printf("///                       d. Excluir    Livro                               ///\n");
     printf("///                       0. Sair                                           ///\n");
+    //printf("///           Escolha a opção desejada: ");
+	//scanf("%c", &op);
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
+    
 }
 
 
 
-void telaModuloCliente(void) 
+void telaModuloCliente(void);
 {
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -171,15 +266,17 @@ void telaModuloCliente(void)
     printf("///                       c. Editar    Cliente                              ///\n");
     printf("///                       d. Excluir   Cliente                              ///\n");
     printf("///                       0. Sair                                           ///\n");
+    //scanf("%c", &op);
+	//getchar();
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-
+    //return op
 }
 
 
 
-void telaModuloEmprestimo(void) 
+void telaModuloEmprestimo(void);
 {
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -207,7 +304,7 @@ void telaModuloEmprestimo(void)
 
 
 
-void telaModuloRelatorio(void) 
+void telaModuloRelatorio(void); 
 {
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -234,8 +331,8 @@ void telaModuloRelatorio(void)
     printf("\n");
 }
 
-
-void ModuloLivro(void)
+char op;
+void ModuloLivro(void);
 {   
     int cadastrar;
     int pesquisar;
@@ -252,11 +349,14 @@ void ModuloLivro(void)
     scanf ("%d", &excluir);
     printf("Sair\n");
     scanf ("%d", &sair);
+    scanf("%c", &op);
+	getchar();
+    return op;
     
 }
 
-
-void ModuloCliente(void)
+char op;
+void ModuloCliente(void);
 {
     int cadastrar;
     int pesquisar;
@@ -273,11 +373,14 @@ void ModuloCliente(void)
     scanf ("%d", &excluir);
     printf("Sair\n");
     scanf ("%d", &sair);
+    scanf("%c", &op);
+	getchar();
+    return op;
     
 }
 
-
-void ModuloEmprestimo(void)
+char op;
+void ModuloEmprestimo(void);
 {
     int cadastrar;
     int pesquisar;
@@ -294,286 +397,36 @@ void ModuloEmprestimo(void)
     scanf ("%d", &devolver);
     printf("Sair\n");
     scanf ("%d", &sair);
-    
+    scanf("%c", &op);
+	getchar();
+    return op;
     
 }
 
-
-void ModuloRelatorio(void)
+char op;
+void ModuloRelatorio(void);
 {
     int cadastrado;
     int emprestado;
     int ativo;
-    //int emprestimo;
-    int atraso;
+    int emprestimo;
+    int emp_atraso;
     int sair;
-    printf("Relatorio de Livro Cadastrado:\n");
+    printf("Relatorio de Livros Cadastrados:\n");
     scanf ("%d", &cadastrado);
-    printf("Relatorio de Livro Emprestado:\n");
+    printf("Relatorio de Livros Emprestados:\n");
     scanf ("%d", &emprestado);
-    printf("Relatorio de Cliente Ativo:\n");
+    printf("Relatorio de Clientes Ativos:\n");
     scanf ("%d", &ativo);
-    printf("Relatorio de Emprestimo em Atraso:\n");
-    scanf ("%d", &atraso);
-    printf("Sair");
+    printf("Relatorio de Emprestimos:\n");
+    scanf ("%d", &emprestimo);
+    printf("Relatorio dos Emprestimos em Atraso:\n");
+    scanf ("%d", &emp_atraso);
+    printf("Sair\n");
     scanf ("%d", &sair);
-    
+    scanf("%c", &op);
+	getchar();
+    return op;
 }
 
-
-void ModuloLivro(void)
-{
-    char opçao;
-    do{
-        opçao= ModuloLivro();
-        switch(opçao){
-                case '1': CadastrarLivro   ();
-                                    break;
-                case '2': PesquisarLivro   ();
-                                    break;
-                case '3': AlterarLivro     ();
-                                    break;
-                case '4': ExcluirLivro     ();
-                                    break;
-                case '0': Sair             ();
-                                    break;
-        }
-
-    } while (opçao !=0);
-    printf('The End\n');
 }
-
-void CadastrarLivro(void)
-{
-    Livro* liv;
-
-    liv= telaCadastrarLivro();
-    gravarLivro(liv);
-    free(liv);
-
-}
-
-void PesquisarLivro(void)
-{
-    Livro* liv;
-    char*  isbn;
-    
-    isbn= telaPesquisarLivro()
-    liv=  buscarLivro(isbn);
-    exibirLivro(liv);
-    free(Isbn);
-    free(liv);
-
-}
-
-void AlterarLivro(void)
-{
-    Livro* liv;
-
-    liv= telaAlterarLivro();
-    gravarAlteraçao(liv);
-    free(liv);
-}
-
-void ExcluirLivro(void)
-{   Livro* liv;
-
-    liv= telaExcluirLivro();
-    gravarExclusao(liv);
-    free(liv);
-}
-
-void ModuloCliente(void)
-{
-    char opçao;
-    do{
-        opçao= ModuloCliente();
-        switch(opçao){
-                case '1': CadastrarCLiente  ();
-                                    break;
-                case '2': PesquisarCliente  ();
-                                    break;
-                case '3': EditarCliente     ();
-                                     break;
-                case '4': ExcluirCLiente    ();
-                                    break;
-                case '0': Sair              ();
-                                    break;
-        }
-
-    } while (opçao !=0);
-    printf('The End/n');
-}
-
-
-
-void CadastrarCliente(void)
-{
-    Cliente* clien;
-
-    clien= telaCadastrarCliente();
-    gravarCliente(clien);
-    free(clien);
-
-}
-
-void PesquisarCliente(void)
-{
-    Cliente* clien;
-    //char*  isbn;
-    
-    //isbn= telaPesquisarLivro()
-    encontrarclien(clien);
-    //free(Isbn);
-    free(clien);
-
-}
-
-void EditarCliente(void)
-{
-    Cliente* clien;
-
-    clien= telaEditarCliente();
-    gravarAlteraçao(clien);
-    free(clien);
-}
-
-void ExcluirCliente(void)
-{   Cliente* clien;
-
-    clien= telaExcluirCliente();
-    gravarExclusao(clien);
-    free(clien);
-}
-
-void ModuloEmprestimo(void)
-{
-    char opçao;
-    do{
-        opçao= ModuloEmprestimo();
-        switch(opçao){
-                case '1': CadastrarEmprestimo  ();
-                                        break;
-                case '2': PesquisarEmprestimo  ();
-                                        break;
-                case '3': EditarEmprestimo     ();
-                                        break;
-                case '4': DevolverEmprestimo   ();
-                                        break;
-                case '0': Sair                 ();
-                                        break;
-        }
-
-    } while (opçao !=0);
-    printf('The End\n');
-}
-
-void CadastrarEmprestimo(void)
-{
-    Emprest* emp;
-
-    emp= telaCadastrarEmprestimo();
-    gravarEmprestimo(emp);
-    free(emp);
-
-}
-
-void PesquisarEmprestimo(void)
-{
-    Emprest* emp;
-    
-    emp= telaPesquisarEmprestimo();
-    exibirEmprestimo(emp);
-    free(emp);
-
-}
-
-void EditarEmprestimo(void)
-{
-    Emprest* emp;
-
-    emp= telaEmprestimo();
-    gravarAlteraçao(emp);
-    free(emp);
-}
-
-void ExcluirEmprestimo(void)
-{   
-    Emprest* emp;
-
-    emp= telaExcluirEmprestimo();
-    gravarExclusao(emp);
-    free(liv);
-}
-
-void ModuloRelatorio(void)
-{
-    char opçao;
-    do{
-        opçao= ModuloRelatorio();
-        switch(opçao){
-                case '1': RelatoriodeLivrosCadastrados    ();
-                                               break;
-                case '2': RelatoriodeLivrosEmprestados    ();
-                                               break;
-                case '3': RelatoriodeClientesAtivos       ();
-                                               break;
-                case '4': RelatoriodeDeEmprestimos        ();
-                                               break;
-                case '5': RelatoriodeDeEmprestimosemAtraso();
-                                               break; 
-                case '0': Sair                            ();
-                                               break;
-        }
-
-    } while (opçao !=0);
-    printf('The End\n');
-}
-
-void RelatoriodeLivrosCadastrado(void)
-{
-    Livros* cadast;
-
-    cadast= teladeLivroCadastrado();
-    mostrarcadastro(cadast);
-    free(cadast);
-
-}
-
-void RelatoriodeLivrosEmprestados(void)
-{
-    Livros* cadast;
-    
-    cadast= teladelivrosEmprestados();
-    mostraremprestimo(cadast);
-    free(cadast);
-
-}
-
-void RelatoriodeClientesAtivos(void)
-{
-    Livro* cadast;
-
-    cadast= teladeClientesAtivos();
-    mostrarclientes(cadast);
-    free(cadast);
-}
-
-void RelatoriodeEmprestimo(void)
-{   Livro* cadast;
-
-    cadast= telaRelatoriodeEmprestimo();
-    mostraremprestimo(cadast);
-    free(cadast);
-}
-
-void RelatoriodeEmprestimoemAtraso(void)
-{   Livro* cadast;
-
-    cadast= telaRelatoriodeEmprestimoemAtraso();
-    mostraremprestimoematraso(cadast);
-    free(cadast);
-}
-
-
- 
