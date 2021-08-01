@@ -16,21 +16,21 @@ void ModuloRelatorio(void) {
 	do {
 		opcao= telaModuloRelatorio();
 		switch(opcao) {
-			case 'a': 	//LivroCadastrado();
+			case 'a': //LivroCadastrado();
                         printf("Em Desenvolvimento/n");
                         getchar();
 						       break;
-			case 'b': 	//LivroEmprestado();
+			case 'b': //LivroEmprestado();
                         printf("Em Desenvolvimento/n");
                         getchar();
 						       break;
-			case 'c': 	//ClienteAtivo();
+			case 'c'://ClienteAtivo();
                         printf("Em Desenvolvimento/n");
                         getchar();
 						        break;
-			case 'd': 	 //Emprestimo();
-                        printf("Em Desenvolvimento/n");
-                        getchar();
+			case 'd': //Emprestimo();
+                        //printf("Em Desenvolvimento/n");
+                        //getchar();
 						        break;
             case 'e':    //EmprestimoEmAtraso();
                         printf("Em Desenvolvimento/n");
@@ -65,6 +65,7 @@ char telaModuloRelatorio(void){
     printf("///                       d. Relatório de Empréstimo                        ///\n");
     printf("///                       e. Relatório dos Empréstimos em Atraso            ///\n");
     printf("///                       0. Sair                                           ///\n");
+    //printf("///                       Escolha a opção desejada: " );
     printf("///                                                                         ///\n");
     scanf("%c", &op);
 	getchar();

@@ -62,6 +62,7 @@ char telaModuloCliente(void){
     printf("///                       c. Editar    Cliente                              ///\n");
     printf("///                       d. Excluir   Cliente                              ///\n");
     printf("///                       0. Sair                                           ///\n");
+    //printf("///                       Escolha a opção desejada: " );
     scanf("%c", &op);
 	getchar();
     printf("///                                                                         ///\n");

@@ -60,6 +60,7 @@ char telaModuloEmprestimo(void){
     printf("///                       c. Editar Empréstimo                              ///\n");
     printf("///                       d. Devolver Empréstimo                            ///\n");
     printf("///                       0. Sair                                           ///\n");
+    //printf("///                       Escolha a opção desejada: " );
     scanf("%c", &op);
 	getchar();
     printf("///                                                                         ///\n");

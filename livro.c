@@ -65,6 +65,7 @@ char telaModuloLivro(void){
     printf("///                       c. Alterar    Livro                               ///\n");
     printf("///                       d. Excluir    Livro                               ///\n");
     printf("///                       0. Sair                                           ///\n");
+    //printf("///                       Escolha a opção desejada: " );
 	scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
