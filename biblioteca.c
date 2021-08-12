@@ -11,7 +11,7 @@
 #include "cliente.h"
 #include "emprestimo.h"
 #include "relatorios.h"
-
+#include "valida.h"
 /////
 // Assinatura das funções
 void telaSobre(void);

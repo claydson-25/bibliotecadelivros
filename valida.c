@@ -64,3 +64,25 @@ int validarcpf(char *cpf)
     }
     return 1;
 }
+
+
+int validaLivro (char* livro){
+    int tam;
+    tam = strlen (livro);
+    if (tam == 0 ){
+        return 0;
+    }
+
+    for (int i = 0; i < tam; i++ ) {
+        if (livro[i] >= 'A' && livro [i] <= 'Z') {
+            continue;
+        } else if (livro[i] >= 'a' && livro[i] <= 'z') {
+            continue;
+        } else if  (livro[i] == ' ') {
+            continue;
+        } else {
+            return 0;
+        }
+    } 
+    return 1;
+}
