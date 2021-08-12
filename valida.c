@@ -26,7 +26,7 @@ int validaCliente (char* cliente){
 }
 
 
-int validarCPF(char *cpf)
+int validarcpf(char *cpf)
 {
     int i, j, digito1 = 0, digito2 = 0;
     if(strlen(cpf) != 11)
