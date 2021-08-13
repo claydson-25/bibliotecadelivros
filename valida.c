@@ -91,11 +91,11 @@ int validaLivro (char* livro){
 //int validaemail (char* email){
 
 int main(void) {
-
+ 
   char email[50]={"abc@xyz.se"};
   int tam=strlen(email);
   int arroba = 0, ponto = 0, antesPonto = 0, depoisPonto = 0, i;
-
+ 
   for (i = 0; i < tam; i++) {
     char c = email[i];
     if(c == '@') {
@@ -120,7 +120,7 @@ int main(void) {
       }
     }
   } // for
-
+ 
   if (i == tam && depoisPonto > 1)
     printf("Valido");
   else
