@@ -26,7 +26,68 @@ int validaCliente (char* cliente){
 }
 
 
-int validarcpf(char *cpf)
+
+int validaTituloLivro (char* livro){
+    int tam;
+    tam = strlen (livro);
+    if (tam == 0 ){
+        return 0;
+    }
+
+    for (int i = 0; i < tam; i++ ) {
+        if (livro[i] >= 'A' && livro [i] <= 'Z') {
+            continue;
+        } else if (livro[i] >= 'a' && livro[i] <= 'z') {
+            continue;
+        } else if  (livro[i] == ' ') {
+            continue;
+        } else {
+            return 0;
+        }
+    } 
+    return 1;
+}
+
+
+int validaemail (char* email){
+ 
+    char email[]={"abc@xyz.se"};
+    int tam=strlen(email);
+    int arroba = 0, ponto = 0, antesPonto = 0, depoisPonto = 0, i;
+ 
+  for (i = 0; i < tam; i++) {
+    char c = email[i];
+    if(c == '@') {
+      if (arroba)
+        break; // não pode ter uma segunda @
+      arroba = 1;
+      if (i < 3)
+        break; // se @ vier antes de 3 caracteres, erro
+    }
+    else if (arroba) { // se já encontrou @
+      if (ponto) { // se já encontrou . depois de @
+        depoisPonto++;
+      }
+      else if(c == '.') {
+        ponto = 1;
+        if (antesPonto < 3) {
+          break; // se . depois de @ vier antes de 3 caracteres, erro
+        }
+      }
+      else {
+        antesPonto++;
+      }
+    }
+  } // for
+ 
+  if (i == tam && depoisPonto > 1)
+    return 1;
+  else
+    return 0;
+}
+
+
+int validarCPF(char *cpf)
 {
     int i, j, digito1 = 0, digito2 = 0;
     if(strlen(cpf) != 11)
@@ -63,66 +124,4 @@ int validarcpf(char *cpf)
         }
     }
     return 1;
-}
-
-
-int validaLivro (char* livro){
-    int tam;
-    tam = strlen (livro);
-    if (tam == 0 ){
-        return 0;
-    }
-
-    for (int i = 0; i < tam; i++ ) {
-        if (livro[i] >= 'A' && livro [i] <= 'Z') {
-            continue;
-        } else if (livro[i] >= 'a' && livro[i] <= 'z') {
-            continue;
-        } else if  (livro[i] == ' ') {
-            continue;
-        } else {
-            return 0;
-        }
-    } 
-    return 1;
-}
-
-
-//int validaemail (char* email){
-
-int main(void) {
- 
-  char email[50]={"abc@xyz.se"};
-  int tam=strlen(email);
-  int arroba = 0, ponto = 0, antesPonto = 0, depoisPonto = 0, i;
- 
-  for (i = 0; i < tam; i++) {
-    char c = email[i];
-    if(c == '@') {
-      if (arroba)
-        break; // não pode ter uma segunda @
-      arroba = 1;
-      if (i < 3)
-        break; // se @ vier antes de 3 caracteres, erro
-    }
-    else if (arroba) { // se já encontrou @
-      if (ponto) { // se já encontrou . depois de @
-        depoisPonto++;
-      }
-      else if(c == '.') {
-        ponto = 1;
-        if (antesPonto < 3) {
-          break; // se . depois de @ vier antes de 3 caracteres, erro
-        }
-      }
-      else {
-        antesPonto++;
-      }
-    }
-  } // for
- 
-  if (i == tam && depoisPonto > 1)
-    printf("Valido");
-  else
-    printf("Invalido");
 }
