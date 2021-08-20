@@ -7,8 +7,23 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
-/////
+typedef struct cliente Cliente;
+
+struct cliente {
+     char nome [51];
+     char cpf [12];
+     char email [41];
+     char telefone [12];
+
+};
+
+
+
 // Assinatura das funções
 char telaModuloCliente(void);
 void ModuloCliente(void);
+void cadastrarCliente(void);
+Cliente* telaCadastrarCliente(void);
+
+
 

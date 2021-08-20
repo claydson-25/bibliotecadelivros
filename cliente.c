@@ -8,16 +8,18 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "cliente.h"
+#include "valida.h"
 
+typedef struct cliente Cliente;
 
 void ModuloCliente(void) {
 	char opcao;
 	do {
 		opcao= telaModuloCliente();
 		switch(opcao) {
-			case 'a': 	//cadastrarCLiente();
-                        printf("Em desenvolvimento/n");
+			case 'a': 	cadastrarCliente();
                         getchar();
 						       break;
 			case 'b': 	//pesquisarCliente();
@@ -38,6 +40,7 @@ void ModuloCliente(void) {
 	} while (opcao != '0');    
     
 }
+
 
 
 
@@ -69,4 +72,60 @@ char telaModuloCliente(void){
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     return op;
+}
+
+void cadastrarCliente(void) {
+	Cliente *clt;
+
+	clt = telaCadastrarCliente();
+	//gravarCliente(clt);
+	free(clt);
+}
+
+
+Cliente* telaCadastrarCliente(void) {
+	Cliente *clt;
+	clt = (Cliente*) malloc(sizeof(Cliente));
+
+	//limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =   Escola de Idiomas Língua Solta    = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                Developed by  @flgorgonio - Jan, 2021                  ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = = = Cadastrar Cliente = = = = = = = =             ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+	//do {
+		printf("///       CPF     (apenas números): ");
+		scanf("%[^\n]", clt->cpf);
+		getchar();
+	//} while (!validarcpf(clt->cpf));
+	printf("///           Nome completo: ");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", clt->nome);
+	getchar();
+	printf("///           E-mail: ");
+	scanf("%[a-z0-9@.]", clt->nome);
+	getchar();
+
+	//do {
+		printf("///           Celular  (apenas números com DDD): ");
+		scanf("%[^\n]", clt->telefone);
+		getchar();
+	//} while (!validarFone(clt->telefone));
+	//aln->status = True;
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+	//delay(1);
+  	return clt;
 }
