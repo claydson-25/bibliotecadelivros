@@ -26,6 +26,28 @@ int validaCliente (char* cliente){
 }
 
 
+int validaAutor (char* autor){
+    int tam;
+    tam = strlen (autor);
+    if (tam == 0 ){
+        return 0;
+    }
+
+    for (int i = 0; i < tam; i++ ) {
+        if (autor[i] >= 'A' && autor [i] <= 'Z') {
+            continue;
+        } else if (autor[i] >= 'a' && autor[i] <= 'z') {
+            continue;
+        } else if  (autor[i] == ' ') {
+            continue;
+        } else {
+            return 0;
+        }
+    } 
+    return 1;
+}
+
+
 
 int validaTituloLivro (char* livro){
     int tam;
@@ -48,6 +70,27 @@ int validaTituloLivro (char* livro){
     return 1;
 }
 
+
+int validaSubTituloLivro (char* subtitulolivro){
+    int tam;
+    tam = strlen (subtitulolivro);
+    if (tam == 0 ){
+        return 0;
+    }
+
+    for (int i = 0; i < tam; i++ ) {
+        if (subtitulolivro[i] >= 'A' && subtitulolivro [i] <= 'Z') {
+            continue;
+        } else if (subtitulolivro[i] >= 'a' && subtitulolivro[i] <= 'z') {
+            continue;
+        } else if  (subtitulolivro[i] == ' ') {
+            continue;
+        } else {
+            return 0;
+        }
+    } 
+    return 1;
+}
 
 int validaemail (char* email){
  
