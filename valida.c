@@ -51,7 +51,7 @@ int validaTituloLivro (char* livro){
 
 int validaemail (char* email){
  
-    char email[]={"abc@xyz.se"};
+
     int tam=strlen(email);
     int arroba = 0, ponto = 0, antesPonto = 0, depoisPonto = 0, i;
  
