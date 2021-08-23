@@ -37,9 +37,16 @@ void ModuloEmprestimo(void) {
 	
 }
 
+void cadastrarEmprestimo(void) {
+	Emprestimo *emp;
+
+	emp = telaCadastrarEmprestimo();
+	//gravarCliente(clt);
+	free(emp);
+}
 
 
-char telaModuloEmprestimo(void){
+char telaModuloEmprestimo(void) {
     char op;
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -68,3 +75,5 @@ char telaModuloEmprestimo(void){
     printf("\n");
     return op;
 }
+
+

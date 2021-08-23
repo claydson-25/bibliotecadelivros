@@ -93,10 +93,10 @@ Cliente* telaCadastrarCliente(void) {
 	printf("///                                                                       ///\n");
 	printf("///          ===================================================          ///\n");
 	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-	printf("///          = = = =   Escola de Idiomas Língua Solta    = = = =          ///\n");
+	printf("///          = = = =              Biblioteca             = = = =          ///\n");
 	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
 	printf("///          ===================================================          ///\n");
-	printf("///                Developed by  @flgorgonio - Jan, 2021                  ///\n");
+	printf("///                Developed by     claydsonbat@yahoo.com.br              ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -117,7 +117,7 @@ Cliente* telaCadastrarCliente(void) {
 	getchar();
 
 	//do {
-		printf("///           Celular  (apenas números com DDD): ");
+		printf("///        Celular  (apenas números com DDD): ");
 		scanf("%[^\n]", clt->telefone);
 		getchar();
 	//} while (!validarFone(clt->telefone));
@@ -129,3 +129,6 @@ Cliente* telaCadastrarCliente(void) {
 	//delay(1);
   	return clt;
 }
+
+
+

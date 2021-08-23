@@ -19,6 +19,7 @@ struct cliente {
 
 
 
+
 // Assinatura das funções
 char telaModuloCliente(void);
 void ModuloCliente(void);
