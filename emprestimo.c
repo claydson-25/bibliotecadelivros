@@ -19,8 +19,7 @@ void ModuloEmprestimo(void) {
 	do {
 		opcao= telaModuloEmprestimo();
 		switch(opcao) {
-			case 'a': 	//cadastrarEmprestimo();
-                        printf("Em Desenvolvimento/n");
+			case 'a': 	cadastrarEmprestimo();
                         getchar();
 						       break;
 			case 'b': 	//pesquisarEmprestimo();
@@ -41,17 +40,7 @@ void ModuloEmprestimo(void) {
 	
 }
 
-void cadastrarEmprestimo(void) {
-	Emprestimo *emp;
 
-	emp = telaCadastrarEmprestimo();
-	//gravarCliente(clt);
-	free(emp);
-}
-
- Emprestimo* telaCadastrarEmprestimo(void) {
-	Emprestimo *emp;
-	emp = (Emprestimo*) malloc(sizeof(Emprestimo));
 
 char telaModuloEmprestimo(void) {
     char op;
@@ -87,7 +76,6 @@ void cadastrarEmprestimo(void) {
 	Emprestimo *emp;
 
 	emp = telaCadastrarEmprestimo();
-	//gravarCliente(clt);
 	free(emp);
 }
 
@@ -132,14 +120,10 @@ void cadastrarEmprestimo(void) {
     scanf("%[0123456789]", emp->isbn);
     printf("///           Ano: ");
     scanf("%[0123456789]", emp->ano);
-
-	
-
-	
-	printf("///                                                                       ///\n");
+    printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
 	//delay(1);
-  	return clt;
+  	return emp;
 }
