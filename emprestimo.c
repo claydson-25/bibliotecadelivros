@@ -7,7 +7,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "emprestimo.h"
+#include "valida.h"
+
+typedef struct emprestimo Emprestimo;
 
 
 void ModuloEmprestimo(void) {
@@ -45,6 +49,9 @@ void cadastrarEmprestimo(void) {
 	free(emp);
 }
 
+ Emprestimo* telaCadastrarEmprestimo(void) {
+	Emprestimo *emp;
+	emp = (Emprestimo*) malloc(sizeof(Emprestimo));
 
 char telaModuloEmprestimo(void) {
     char op;
@@ -76,4 +83,63 @@ char telaModuloEmprestimo(void) {
     return op;
 }
 
+void cadastrarEmprestimo(void) {
+	Emprestimo *emp;
 
+	emp = telaCadastrarEmprestimo();
+	//gravarCliente(clt);
+	free(emp);
+}
+
+ Emprestimo* telaCadastrarEmprestimo(void) {
+	Emprestimo *emp;
+	emp = (Emprestimo*) malloc(sizeof(Emprestimo));
+
+//limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =              Biblioteca             = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                Developed by     claydsonbat@yahoo.com.br              ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = = = Cadastrar Empréstimo = = = = = = = =        ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+
+
+//do {
+		printf("///       Autor     (apenas letras): ");
+		scanf("%[^\n]", emp->autor);
+		getchar();
+	//} while (!validarcpf(clt->cpf));
+	printf("///           Título: ");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", emp->titulo);
+    printf("///           Subtítulo: ");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", emp->subtitulo);
+    printf("///           Editora: ");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", emp->editora);
+    getchar();
+    scanf("%[0123456789]", emp->editora);
+	getchar();
+	printf("///           ISBN: ");
+    scanf("%[0123456789]", emp->isbn);
+    printf("///           Ano: ");
+    scanf("%[0123456789]", emp->ano);
+
+	
+
+	
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+	//delay(1);
+  	return clt;
+}
