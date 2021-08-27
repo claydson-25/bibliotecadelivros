@@ -8,8 +8,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
+#include <stdlib.h>
 #include  "livro.h"
-
+#include  "valida.h"
 
 
 void ModuloLivro(void) {
@@ -17,8 +18,7 @@ void ModuloLivro(void) {
 	do {
 		opcao= telaModuloLivro();
 		switch(opcao) {
-			case 'a': 	//cadastrarLivro();
-                        printf("Em desenvolvimento/n");
+			case 'a': 	cadastrarLivro();
                         getchar();
 						       break;
 			case 'b': 	//pesquisarLivro();
@@ -73,5 +73,66 @@ char telaModuloLivro(void){
     printf("\n");
     return op;
 }
+
+void cadastrarLivro(void) {
+	Livro *lvr;
+
+	lvr = telaCadastrarLivro();
+	//gravarCliente(clt);
+	free(lvr);
+}
+
+
+Livro* telaCadastrarLivro(void) {
+	Livro *lvr;
+	lvr = (Livro*) malloc(sizeof(Livro));
+
+
+//limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =              Biblioteca             = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                Developed by     claydsonbat@yahoo.com.br              ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = = = Cadastrar Livro = = = = = = = =             ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+	//do {
+		printf("///       Título    : ");
+		scanf("%[^\n]", lvr->titulo);
+		getchar();
+	//} while (!validarcpf(clt->cpf));
+	printf("///           Autor: ");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", lvr->autor);
+	getchar();
+
+	//do {
+		printf("///        Subtitulo: ");
+		scanf("%[^\n]", lvr->subtitulo);
+		getchar();
+        printf("///        Editora: ");
+		scanf("%[^\n]", lvr->editora);
+		getchar();
+        printf("///        Ano: ");
+		scanf("%[0123456789]", lvr->ano);
+		getchar();
+	//} while (!validarFone(clt->telefone));
+	//aln->status = True;
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+	//delay(1);
+  	return lvr;
+}
+
 
 
