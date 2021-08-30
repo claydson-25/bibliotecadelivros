@@ -19,18 +19,18 @@ void ModuloCliente(void) {
 	do {
 		opcao= telaModuloCliente();
 		switch(opcao) {
-			case 'a': 	cadastrarCliente();
+			case '1': 	cadastrarCliente();
                         getchar();
 						       break;
-			case 'b': 	//pesquisarCliente();
-                        printf("Em desenvolvimento/n");
+			case '2': 	pesquisarCliente();
+                        //printf("Em desenvolvimento/n");
                         getchar();
 						       break;
-			case 'c': 	//editarCliente();
+			case '3': 	//editarCliente();
                         printf("Em desenvolvimento/n");
                         getchar();
 						        break;
-			case 'd': 	//excluirCliente();
+			case '4': 	//excluirCliente();
                         printf("Em desenvolvimento/n");
                         getchar();
 						        break;
@@ -87,6 +87,10 @@ Cliente* telaCadastrarCliente(void) {
 	Cliente *clt;
 	clt = (Cliente*) malloc(sizeof(Cliente));
 
+
+
+
+
 	//limpaTela();
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -129,6 +133,11 @@ Cliente* telaCadastrarCliente(void) {
 	//delay(1);
   	return clt;
 }
+
+
+
+
+
 
 
 

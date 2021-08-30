@@ -24,7 +24,9 @@ struct cliente {
 char telaModuloCliente(void);
 void ModuloCliente(void);
 void cadastrarCliente(void);
+void pesquisarCliente(void);
 Cliente* telaCadastrarCliente(void);
+Cliente* telaPesquisarCliente(void);
 
 
 
