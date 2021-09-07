@@ -21,6 +21,9 @@ void relatorioLivrosEmprestimoAtrasado(void);
 char* telaRelatorioLivrosCadastrados(void);
 char* telaRelatorioEmprestimo(void);
 char* telaRelatorioLivro(void);
+char* telaRelatorioClientesAtivos(void);
+char* telaRelatorioEmprestimosemAtraso(void);
+
 
 
 void relatCliente(char*);
