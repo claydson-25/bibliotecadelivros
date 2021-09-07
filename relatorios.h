@@ -11,11 +11,11 @@ char telaModuloRelatorio(void);
 void ModuloRelatorio(void);
 
 
-void relatorioLivrosCadastrados(void);
-void relatorioLivrosEmprestados(void);
-void relatorioClientesAtivos(void);
-void relatorioLivrosEmprestimo(void);
-void relatorioLivrosEmprestimoAtrasado(void);
+void relatorioLivrosCadastrados(char* isbn);
+void relatorioLivrosEmprestados(char* isbn);
+void relatorioClientesAtivos(char* cpf);
+void relatorioLivrosEmprestimo(char* isbn);
+void relatorioLivrosEmprestimoAtrasado(char* isbn);
 
 
 char* telaRelatorioLivrosCadastrados(void);

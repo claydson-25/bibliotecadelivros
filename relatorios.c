@@ -16,24 +16,25 @@ void ModuloRelatorio(void) {
 	do {
 		opcao= telaModuloRelatorio();
 		switch(opcao) {
-			case 'a': //LivroCadastrado();
-                        printf("Em Desenvolvimento/n");
-                        getchar();
-						       break;
-			case 'b': //LivroEmprestado();
-                        printf("Em Desenvolvimento/n");
-                        getchar();
-						       break;
-			case 'c'://ClienteAtivo();
-                        printf("Em Desenvolvimento/n");
-                        getchar();
-						        break;
-			case 'd': //Emprestimo();
+			case '1':  LivroCadastrado();
                         //printf("Em Desenvolvimento/n");
-                        //getchar();
+                        getchar();
+						       break;
+			case '2':   LivroEmprestado();
+                        //printf("Em Desenvolvimento/n");
+                        getchar();
+						       break;
+			case '3':   ClienteAtivo();
+                        //printf("Em Desenvolvimento/n");
+                        getchar();
 						        break;
-            case 'e':    //EmprestimoEmAtraso();
-                        printf("Em Desenvolvimento/n");
+			case '4':   Emprestimo();
+                        //printf("Em Desenvolvimento/n");
+                        getchar();
+						        break;
+            case '5':   EmprestimoEmAtraso();
+                        //
+						printf("Em Desenvolvimento/n");
                         getchar();
                                 break;
 			
@@ -65,7 +66,7 @@ char telaModuloRelatorio(void){
     printf("///                       4. Relatório de Empréstimo                        ///\n");
     printf("///                       5. Relatório dos Empréstimos em Atraso            ///\n");
     printf("///                       0. Sair                                           ///\n");
-    //printf("///                       Escolha a opção desejada: " );
+    printf("///                       Escolha a opção desejada: " );
     printf("///                                                                         ///\n");
     scanf("%c", &op);
 	getchar();
@@ -97,7 +98,7 @@ char* telaRelatorioLivrosCadastrados(void) {
 	printf("///           = = = = = = =  Livros Cadastrados     = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           Informe o Título do Livro: ");
+	printf("///           Informe o ISBN: ");
 	scanf("%[A-Za-z0-9]", isbn);
 	getchar();
 	printf("///                                                                       ///\n");
@@ -206,3 +207,164 @@ char* telaRelatorioEmprestimosemAtraso(void) {
 	delay(1);
     return cpf;
 }
+
+
+void relatorioLivrosCadastrados(char* isbn) {
+		limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =         Biblioteca de Livros        = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  ISBN do Livro: %-3s  = = = = =             ///\n", isbn);
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                   Relatório de Livros Cadastrados                     ///\n");
+    printf("///           ===============================================             ///\n");
+	printf("///        ||  ISBN  ||  Título   ||  Autor ||  Ano || Editora ||         ///\n");
+    printf("///           ===============================================             ///\n");
+    printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("///           Tecle <ENTER> para continuar...                             ///");
+    getchar();
+}
+
+
+
+void relatorioLivrosEmprestados(char* isbn) {
+		limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =        Biblioteca de Livros         = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  ISBN do Cliente: %-3s  = = = = =             ///\n", isbn);
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                 Relatório de Livros Emprestados                       ///\n");
+    printf("///           ===============================================             ///\n");
+	printf("///               Nome ||  CPF  ||  Livro   ||  ISBN ||                   ///\n");
+    printf("///           ===============================================             ///\n");
+    printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("///           Tecle <ENTER> para continuar...                             ///");
+    getchar();
+}
+
+
+
+void relatorioClientesAtivos(char* cpf) {
+		limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =        Biblioteca de Livros         = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  CPF do Cliente: %-3s  = = = = =             ///\n", cpf);
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                  Relatório de Clientes Ativos                         ///\n");
+    printf("///           ===============================================             ///\n");
+	printf("///                  Nome ||  CPF  ||  Situação  ||                       ///\n");
+    printf("///           ===============================================             ///\n");
+    printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("///           Tecle <ENTER> para continuar...                             ///");
+    getchar();
+}
+
+
+
+void relatorioLivrosEmprestimo(char* isbn) {
+		limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =        Biblioteca de Livros         = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  ISBN do Livro: %-3s  = = = = =               ///\n", isbn);
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                  Relatório de Livros Emprestados                      ///\n");
+    printf("///           ===============================================             ///\n");
+	printf("///                     ISBN ||  Nome  ||  CPF ||                         ///\n");
+    printf("///           ===============================================             ///\n");
+    printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("///           Tecle <ENTER> para continuar...                             ///");
+    getchar();
+}
+
+
+void relatorioLivrosEmprestimoAtrasado(char* isbn) {
+		limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =        Biblioteca de Livros         = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  ISBN do Livro: %-3s  = = = = =               ///\n", isbn);
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                  Relatório de Livros em Atraso                        ///\n");
+    printf("///           ===============================================             ///\n");
+	printf("///              Cliente || CPF ||  Livro  ||  Isbn ||  Situação           ///\n");
+    printf("///           ===============================================             ///\n");
+    printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("///           Tecle <ENTER> para continuar...                             ///");
+    getchar();
+}
+
+
+
