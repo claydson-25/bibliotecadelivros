@@ -33,3 +33,4 @@ char telaModuloLivro(void);
 void ModuloLivro(void);
 void cadastrarLivro(void);
 Livro* telaCadastrarLivro(void);
+void gravarLivro(Livro*);

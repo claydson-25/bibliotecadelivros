@@ -78,7 +78,7 @@ void cadastrarLivro(void) {
 	Livro *lvr;
 
 	lvr = telaCadastrarLivro();
-	//gravarCliente(clt);
+	gravarLivro(lvr);
 	free(lvr);
 }
 
@@ -132,6 +132,19 @@ Livro* telaCadastrarLivro(void) {
 	printf("\n");
 	//delay(1);
   	return lvr;
+}
+
+
+void gravarLivro(Livro* lvr) {
+	FILE* fp;
+
+	fp = fopen("livros.dat", "ab");
+	if (fp == NULL) {
+		//telaErroArquivoAluno();
+		printf("Deu erro");
+	}
+	fwrite(lvr, sizeof(Livro), 1, fp);
+	fclose(fp);
 }
 
 
