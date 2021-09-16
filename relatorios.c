@@ -8,6 +8,9 @@
 
 #include <stdio.h>
 #include "relatorios.h"
+#include "stdlib.h"
+#include <string.h>
+#include "valida.h"
 
 
 
@@ -16,31 +19,90 @@ void ModuloRelatorio(void) {
 	do {
 		opcao= telaModuloRelatorio();
 		switch(opcao) {
-			case '1':  LivroCadastrado();
-                        //printf("Em Desenvolvimento/n");
-                        getchar();
+			case '1':  livroCadastrado();
+                        //getchar();
 						       break;
 			case '2':   LivroEmprestado();
-                        //printf("Em Desenvolvimento/n");
-                        getchar();
+                        //getchar();
 						       break;
 			case '3':   ClienteAtivo();
-                        //printf("Em Desenvolvimento/n");
-                        getchar();
+                        //getchar();
 						        break;
-			case '4':   Emprestimo();
-                        //printf("Em Desenvolvimento/n");
-                        getchar();
+			case '4':   Emprestimo();                       
+                        //getchar();
 						        break;
             case '5':   EmprestimoEmAtraso();
-                        //
-						printf("Em Desenvolvimento/n");
-                        getchar();
+                        //getchar();
                                 break;
 			
 		    } 		
 	} while (opcao != '0'); 
 } 
+
+void RelatorioLivrosCadastradoS(char* isbn) {
+
+	// função ainda em desenvolvimento
+	// exibe a tela apenas para testes
+
+    char* isbnlivro;
+
+		isbnlivro = telaRelatorioLivrosCadastrados();
+    relatLivroCadastrado(isbnlivro);
+    free(isbnlivro);
+}
+
+
+void RelatorioLivrosEmprestados(char* isbn) {
+
+	// função ainda em desenvolvimento
+	// exibe a tela apenas para testes
+
+    char* isbnlivro;
+
+		isbnlivro = telaRelatorioLivrosEmprestados();
+    relatLivroEmprestado(isbnlivro);
+    free(isbnlivro);
+}
+
+
+void RelatorioClientesAtivos(char* cpf) {
+
+	// função ainda em desenvolvimento
+	// exibe a tela apenas para testes
+
+    char* cpfCliente;
+
+		cpfCliente = telaRelatorioClientesAtivos();
+    relatClienteativo(cpfCliente);
+    free(cpfCliente);
+}
+
+
+void RelatorioLivrosEmprestimo(char* isbn) {
+
+	// função ainda em desenvolvimento
+	// exibe a tela apenas para testes
+
+    char* isbnLivro;
+
+		isbnLivro = telaRelatorioLivroEmprestimo();
+    relatEmprestimo(isbnLivro);
+    free(isbnLivro);
+}
+
+
+void RelatorioLivroEmprestimoAtrasados(char* cpf) {
+
+	// função ainda em desenvolvimento
+	// exibe a tela apenas para testes
+
+    char* cpfCliente;
+
+		cpfCliente = telaRelatorioEmprestimoEmAtraso();
+    relatEmprestimoEmAtraso(cpfCliente);
+    free(cpfCliente);
+}
+
 
 
 
