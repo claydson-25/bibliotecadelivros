@@ -128,13 +128,14 @@ char telaModuloRelatorio(void){
     printf("///                       4. Relatório de Empréstimo                        ///\n");
     printf("///                       5. Relatório dos Empréstimos em Atraso            ///\n");
     printf("///                       0. Sair                                           ///\n");
-    printf("///                       Escolha a opção desejada: " );
+    printf("///                       Escolha a opção desejada: " );                    
     printf("///                                                                         ///\n");
     scanf("%c", &op);
 	getchar();
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
+	delay(1);
     return op;
 }
 
@@ -160,7 +161,7 @@ char* telaRelatorioLivrosCadastrados(void) {
 	printf("///           = = = = = = =  Livros Cadastrados     = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           Informe o ISBN: ");
+	printf("///           Informe o ISBN do livro: ");
 	scanf("%[A-Za-z0-9]", isbn);
 	getchar();
 	printf("///                                                                       ///\n");
