@@ -273,6 +273,14 @@ char* telaRelatorioEmprestimosemAtraso(void) {
 
 
 void relatorioLivrosCadastrados(char* isbn) {
+
+	char *numeroIsbn;
+    // posteriormente, esta função irá buscar o livro cadastrado no arquivo 
+    // por enquanto, o nome será preenchido com um valor predefinido
+    numeroIsbn = (char*) malloc(10*sizeof(char));
+    strcpy(numeroIsbn,"Algoritmo");
+
+
 		limpaTela();
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -303,9 +311,16 @@ void relatorioLivrosCadastrados(char* isbn) {
 }
 
 
-
 void relatorioLivrosEmprestados(char* isbn) {
-		limpaTela();
+
+	char *numeroIsbn;
+    // posteriormente, esta função irá buscar o livro emprestado no arquivo 
+    // por enquanto, o nome será preenchido com um valor predefinido
+    numeroIsbn = (char*) malloc(10*sizeof(char));
+    strcpy(numeroIsbn,"Algoritmo");
+
+
+	limpaTela();
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -337,7 +352,15 @@ void relatorioLivrosEmprestados(char* isbn) {
 
 
 void relatorioClientesAtivos(char* cpf) {
-		limpaTela();
+
+	char *numeroCPF;
+    // posteriormente, esta função irá buscar o numero o cliente no arquivo 
+    // por enquanto, o nome será preenchido com um valor predefinido
+    numeroCPF = (char*) malloc(10*sizeof(char));
+    strcpy(numeroCPF,"Brizola");
+
+
+	limpaTela();
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -369,7 +392,15 @@ void relatorioClientesAtivos(char* cpf) {
 
 
 void relatorioLivrosEmprestimo(char* isbn) {
-		limpaTela();
+
+	char *numeroIsbn;
+    // posteriormente, esta função irá buscar  o empréstimo no arquivo 
+    // por enquanto, o nome será preenchido com um valor predefinido
+    numeroIsbn = (char*) malloc(10*sizeof(char));
+    strcpy(numeroIsbn,"Algoritmo");
+
+
+	limpaTela();
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -400,6 +431,14 @@ void relatorioLivrosEmprestimo(char* isbn) {
 
 
 void relatorioLivrosEmprestimoAtrasado(char* isbn) {
+
+	char *numeroIsbn;
+    // posteriormente, esta função irá buscar  o empréstimo em atraso no arquivo 
+    // por enquanto, o nome será preenchido com um valor predefinido
+    numeroIsbn = (char*) malloc(10*sizeof(char));
+    strcpy(numeroIsbn,"Algoritmo");
+
+
 		limpaTela();
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
