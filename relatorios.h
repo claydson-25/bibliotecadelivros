@@ -35,3 +35,5 @@ void relatCliente(char*);
 void relatEmprestimo(char*);
 void relatLivro(char*);
 
+void relatDeTodosOsLivrosCadastrados(char* livros);
+void relatDeTodososClientes(char* clientes);
