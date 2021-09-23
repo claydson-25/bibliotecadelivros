@@ -12,6 +12,8 @@
 #include  "livro.h"
 #include  "valida.h"
 
+typedef struct livro Livro;
+
 
 void ModuloLivro(void) {
 	char opcao;

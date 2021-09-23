@@ -11,6 +11,10 @@
 #include "stdlib.h"
 #include <string.h>
 #include "valida.h"
+#include "livro.h"
+#include "cliente.h"
+
+
 
 
 
@@ -469,4 +473,114 @@ void relatorioLivrosEmprestimoAtrasado(char* isbn) {
 }
 
 
+void relatLivro(char* titulos) {
 
+	limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =        Biblioteca de Livros         = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  Títulos: %7s  = = = = = = =             ///\n", titulos);
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+    printf("///           ===============================================             ///\n");
+	printf("///           ||  Título  ||        Autor                  ||             ///\n");
+    printf("///           ===============================================             ///\n");
+    relatDeTodosOsLivrosCadastrados(titulos);
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("///           Tecle <ENTER> para continuar...                             ///");
+    getchar();
+}
+
+void relatLivro(char* titulo) {
+    FILE* fp;
+    Livro* lvr;
+    char nomeTrunc[51];
+    int tam;
+
+    lvr = (Livro*) malloc(sizeof(Livro));
+    fp = fopen("livro.dat", "rb");
+    while (fread(lvr, sizeof(Livro), 1, fp)) {
+        if (strcmp(lvr->titulo, titulo) == 0) {
+            tam = strlen(lvr->titulo);
+            strncpy(nomeTrunc, lvr->titulo, tam);
+            for (int i = tam; i < 51; i++) {
+                nomeTrunc[i] = ' ';
+            }
+            nomeTrunc[51] = '\0';
+            printf("///           ||     %-3s     || %-26s ||             ///\n", lvr-> titulo, nomeTrunc);
+        }
+    }
+    fclose(fp);
+    free(lvr);
+}
+
+
+
+void relatCliente(char* cliente) {
+
+	limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =        Biblioteca de Livros         = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  Títulos: %7s  = = = = = = =             ///\n", cliente);
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+    printf("///           ===============================================             ///\n");
+	printf("///           ||  Nome  ||        CPF                ||                    ///\n");
+    printf("///           ===============================================             ///\n");
+    relatDeTodososClientes(cliente);
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("///           Tecle <ENTER> para continuar...                             ///");
+    getchar();
+}
+
+
+void relatCliente(char* cliente) {
+    FILE* fp;
+    Cliente* cpf;
+    char nomeTrunc[12];
+    int tam;
+
+    cpf = (Cliente*) malloc(sizeof(Cliente));
+    fp = fopen("cliente.dat", "rb");
+    while (fread(cpf, sizeof(Cliente), 1, fp)) {
+        if (strcmp(cpf->cliente,cliente) == 0) {
+            tam = strlen(cpf->cliente);
+            strncpy(nomeTrunc, cpf->cliente, tam);
+            for (int i = tam; i < 12; i++) {
+                nomeTrunc[i] = ' ';
+            }
+            nomeTrunc[12] = '\0';
+            printf("///           ||     %-3s     || %-26s ||             ///\n", cpf-> cliente, nomeTrunc);
+        }
+    }
+    fclose(fp);
+    free(cpf);
+}
+
+	
+    

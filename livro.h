@@ -21,6 +21,7 @@ struct livro        {
      char subtitulo [51];
      char editora [21];
      char ano [12];
+     char isbn [14];
 
 
 };

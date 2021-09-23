@@ -6,7 +6,7 @@
 ///               Projeto Sistema de  Biblioteca de Livros                  ///
 ///////////////////////////////////////////////////////////////////////////////
 
-
+char telaModuloCliente(void);
 char telaModuloRelatorio(void);
 void ModuloRelatorio(void);
 
@@ -35,5 +35,5 @@ void relatCliente(char*);
 void relatEmprestimo(char*);
 void relatLivro(char*);
 
-void relatDeTodosOsLivrosCadastrados(char* livros);
+void relatDeTodosOsLivrosCadastrados(char* titulos);
 void relatDeTodososClientes(char* clientes);

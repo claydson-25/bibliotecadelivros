@@ -26,7 +26,9 @@ void ModuloCliente(void);
 void cadastrarCliente(void);
 void pesquisarCliente(void);
 Cliente* telaCadastrarCliente(void);
-Cliente* telaPesquisarCliente(void);
+char* telaPesquisarCliente(void);
+void cadastrarCliente(void);
+void pesquisarCliente(void);
 
 
 

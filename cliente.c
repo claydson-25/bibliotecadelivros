@@ -20,11 +20,11 @@ void ModuloCliente(void) {
 		opcao= telaModuloCliente();
 		switch(opcao) {
 			case '1': 	cadastrarCliente();
-                        getchar();
+                        //getchar();
 						       break;
 			case '2': 	pesquisarCliente();
                         //printf("Em desenvolvimento/n");
-                        getchar();
+                        //getchar();
 						       break;
 			case '3': 	//editarCliente();
                         printf("Em desenvolvimento/n");
@@ -41,6 +41,28 @@ void ModuloCliente(void) {
     
 }
 
+void cadastrarCliente(void)  {
+	Cliente * clt;
+
+	clt = telaCadastrarCliente();
+	gravarAluno(clt);
+	free(clt);
+}
+
+void pesquisarCliente(void) {
+
+	Cliente* clt;
+	char* cpf;
+
+	cpf = telaPesquisarAluno();
+	clt = telaPesquisarCliente();
+	exibirCliente(clt);
+	free(clt); 
+	free(cpf);
+
+}
+
+	
 
 
 
