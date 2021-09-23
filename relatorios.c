@@ -13,6 +13,7 @@
 #include "valida.h"
 #include "livro.h"
 #include "cliente.h"
+#include "emprestimo.h"
 
 
 
@@ -32,7 +33,7 @@ void ModuloRelatorio(void) {
 			case '3':   ClienteAtivo();
                         //getchar();
 						        break;
-			case '4':   Emprestimo();                       
+			//case '4':   Emprestimo();                       
                         //getchar();
 						        break;
             case '5':   EmprestimoEmAtraso();
@@ -582,5 +583,63 @@ void relatCliente(char* cliente) {
     free(clt);
 }
 
-	
-    
+
+void relatEmprestimo(char* livro) {
+
+	limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =        Biblioteca de Livros         = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  ISBN: %7s  = = = = = = =                     ///\n", livro);
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+    printf("///           ===============================================             ///\n");
+	printf("///           ||  Nome  ||        CPF                ||                    ///\n");
+    printf("///           ===============================================             ///\n");
+    relatDeTodososClientes(livro);
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("///           Tecle <ENTER> para continuar...                             ///");
+    getchar();
+}
+
+
+void relatEmprestimo(char* livro) {
+
+	FILE* fp;
+    Livro* empr;
+    char nomeTrunc[13];
+    int tam;
+
+    empr = (Livro*) malloc(sizeof(Livro));
+    fp = fopen("emprestimo.dat", "rb");
+    while (fread(empr, sizeof(Livro), 1, fp)) {
+        if (strcmp(empr->isbn, empr) == 0) {
+            tam = strlen(empr->isbn);
+            strncpy(nomeTrunc, empr->isbn, tam);
+            for (int i = tam; i < 12; i++) {
+                nomeTrunc[i] = ' ';
+            }
+            nomeTrunc[12] = '\0';
+            printf("///           ||     %-3s     || %-26s ||             ///\n", empr-> isbn, nomeTrunc);
+        }
+    }
+    fclose(fp);
+    free(empr);
+}	
+
+
+
+
+

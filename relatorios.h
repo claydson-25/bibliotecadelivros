@@ -37,3 +37,4 @@ void relatLivro(char*);
 
 void relatDeTodosOsLivrosCadastrados(char* titulos);
 void relatDeTodososClientes(char* clientes);
+void relatDeTodosEmprestimos(char* cpf);
