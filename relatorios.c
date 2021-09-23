@@ -561,25 +561,25 @@ void relatCliente(char* cliente) {
 
 void relatCliente(char* cliente) {
     FILE* fp;
-    Cliente* cpf;
+    Cliente* clt;
     char nomeTrunc[12];
     int tam;
 
-    cpf = (Cliente*) malloc(sizeof(Cliente));
+    clt = (Cliente*) malloc(sizeof(Cliente));
     fp = fopen("cliente.dat", "rb");
-    while (fread(cpf, sizeof(Cliente), 1, fp)) {
-        if (strcmp(cpf->cliente,cliente) == 0) {
-            tam = strlen(cpf->cliente);
-            strncpy(nomeTrunc, cpf->cliente, tam);
+    while (fread(clt, sizeof(Cliente), 1, fp)) {
+        if (strcmp(clt->cpf, clt) == 0) {
+            tam = strlen(clt->cpf);
+            strncpy(nomeTrunc, clt->cpf, tam);
             for (int i = tam; i < 12; i++) {
                 nomeTrunc[i] = ' ';
             }
             nomeTrunc[12] = '\0';
-            printf("///           ||     %-3s     || %-26s ||             ///\n", cpf-> cliente, nomeTrunc);
+            printf("///           ||     %-3s     || %-26s ||             ///\n", clt-> cpf, nomeTrunc);
         }
     }
     fclose(fp);
-    free(cpf);
+    free(clt);
 }
 
 	
