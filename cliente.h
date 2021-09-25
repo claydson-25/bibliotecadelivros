@@ -29,6 +29,6 @@ Cliente* telaCadastrarCliente(void);
 char* telaPesquisarCliente(void);
 void cadastrarCliente(void);
 void pesquisarCliente(void);
-
-
+Cliente* buscarCliente(char*);
+void exibirCliente(Cliente*);
 

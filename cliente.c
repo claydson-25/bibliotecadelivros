@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include "cliente.h"
 #include "valida.h"
+#include "emprestimo.h"
 
 typedef struct cliente Cliente;
 
@@ -19,12 +20,13 @@ void ModuloCliente(void) {
 	do {
 		opcao= telaModuloCliente();
 		switch(opcao) {
-			case '1': 	cadastrarCliente();
-                        //getchar();
+			case '1': 	//cadastrarCliente();
+						printf("Em desenvolvimento");
+                        getchar();
 						       break;
-			case '2': 	pesquisarCliente();
-                        //printf("Em desenvolvimento/n");
-                        //getchar();
+			case '2': 	//pesquisarCliente();
+                        printf("Em desenvolvimento/n");
+                        getchar();
 						       break;
 			case '3': 	//editarCliente();
                         printf("Em desenvolvimento/n");
@@ -45,7 +47,7 @@ void cadastrarCliente(void)  {
 	Cliente * clt;
 
 	clt = telaCadastrarCliente();
-	gravarAluno(clt);
+	//gravarCliente(clt);
 	free(clt);
 }
 
@@ -54,8 +56,8 @@ void pesquisarCliente(void) {
 	Cliente* clt;
 	char* cpf;
 
-	cpf = telaPesquisarAluno();
-	clt = telaPesquisarCliente();
+	cpf = telaPesquisarCliente();
+	clt = buscarCliente(cpf);
 	exibirCliente(clt);
 	free(clt); 
 	free(cpf);
@@ -96,13 +98,13 @@ char telaModuloCliente(void){
     return op;
 }
 
-void cadastrarCliente(void) {
+/*void cadastrarCliente(void) {
 	Cliente *clt;
 
 	clt = telaCadastrarCliente();
 	//gravarCliente(clt);
 	free(clt);
-}
+}*/
 
 
 Cliente* telaCadastrarCliente(void) {
@@ -157,9 +159,36 @@ Cliente* telaCadastrarCliente(void) {
 }
 
 
+char* telaPesquisarCliente(void) {
+	char* cpf;
+	cpf = (char*) malloc(12*sizeof(char));
 
 
-
-
+	//limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =   Biblioteca de Livros              = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = = Pesquisar Cliente = = = = = = =             ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+	printf("///           Informe o CPF do Cliente (apenas números): ");
+	scanf("%[0-9]", cpf);
+	getchar();
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+	delay(1);
+	return cpf;
+}
 
 
